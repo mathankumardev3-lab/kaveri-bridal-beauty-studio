@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaveri Bridal & Beauty Studio | Traditional South Indian Luxury Parlour</title>
+  <meta name="description" content="Experience the perfect blend of traditional South Indian beauty and modern elegance. Luxury Kanchipuram bridal styling, temple jewellery draping, and holistic beauty care in Chennai." />
+
+  <!-- Google Fonts: Cormorant Garamond (Luxury Serif) & Plus Jakarta Sans (Clean Modern Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Custom Palette & Typography Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory: '#FFF9F0',
+            ivoryDark: '#F7EFE2',
+            maroon: '#800020',
+            maroonDark: '#5C0017',
+            gold: '#C9A45C',
+            goldLight: '#E2C68D',
+            rose: '#E8B7B7',
+            roseSoft: '#F5DFDF',
+            espresso: '#382820',
+            espressoLight: '#634D42'
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          },
+          boxShadow: {
+            'luxury': '0 20px 50px -12px rgba(128, 0, 32, 0.12)',
+            'gold-glow': '0 10px 30px -5px rgba(201, 164, 92, 0.25)'
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- External Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="antialiased selection:bg-maroon selection:text-ivory">
+
+  <!-- =========================================================================
+       1. STICKY NAVIGATION BAR
+       ========================================================================= -->
+  <header id="navbar" class="sticky top-0 z-50 w-full bg-ivory/95 backdrop-blur-md border-b border-gold/25 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Brand Logo -->
+        <a href="#home" class="flex items-center gap-3 group focus:outline-none">
+          <div class="w-11 h-11 rounded-full bg-maroon flex items-center justify-center border border-gold shadow-sm group-hover:scale-105 transition-transform">
+            <!-- Temple Lotus Emblem SVG -->
+            <svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M12 3C14.5 7 15.5 10.5 12 14.5C8.5 10.5 9.5 7 12 3Z" />
+              <path d="M12 14.5C15.5 11.5 19 11.5 21 14C18.5 16.5 15 17 12 14.5Z" />
+              <path d="M12 14.5C8.5 11.5 5 11.5 3 14C5.5 16.5 9 17 12 14.5Z" />
+              <path d="M6 17.5C9.5 18.5 14.5 18.5 18 17.5" stroke-linecap="round" />
+              <circle cx="12" cy="20.5" r="1" fill="currentColor" />
+            </svg>
+          </div>
+          <div>
+            <span class="block font-editorial text-2xl font-bold tracking-wide text-maroon leading-none">KAVERI</span>
+            <span class="block text-[10px] uppercase tracking-[0.26em] text-espressoLight font-semibold mt-0.5">Bridal & Beauty Studio</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-espresso">
+          <a href="#home" class="nav-link hover:text-maroon transition-colors py-1">Home</a>
+          <a href="#about" class="nav-link hover:text-maroon transition-colors py-1">About</a>
+          <a href="#services" class="nav-link hover:text-maroon transition-colors py-1">Services</a>
+          <a href="#bridal-collection" class="nav-link hover:text-maroon transition-colors py-1">Bridal Collection</a>
+          <a href="#gallery" class="nav-link hover:text-maroon transition-colors py-1">Gallery</a>
+          <a href="#testimonials" class="nav-link hover:text-maroon transition-colors py-1">Testimonials</a>
+          <a href="#contact" class="nav-link hover:text-maroon transition-colors py-1">Contact</a>
+        </nav>
+
+        <!-- Desktop CTA & Mobile Hamburger Button -->
+        <div class="flex items-center gap-3">
+          <a href="#appointment" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-maroon text-ivory text-xs uppercase tracking-widest font-semibold hover:bg-maroonDark transition-all shadow-gold-glow">
+            <span>Book Now</span>
+          </a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button id="mobileMenuBtn" aria-label="Toggle Menu" class="lg:hidden p-2.5 rounded-xl border border-gold/40 text-maroon hover:bg-maroon/5 focus:outline-none">
+            <svg id="menuIconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="menuIconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenuDrawer" class="hidden lg:hidden bg-ivory border-t border-gold/25 px-6 pt-4 pb-7 shadow-xl">
+      <nav class="flex flex-col space-y-3 text-base font-medium text-espresso">
+        <a href="#home" class="mobile-nav-link py-2 border-b border-gold/15 hover:text-maroon">Home</a>
+        <a href="#about" class="mobile-nav-link py-2 border-b border-gold/15 hover:text-maroon">About</a>
+        <a href="#services" class="mobile-nav-link py-2 border-b border-gold/15 hover:text-maroon">Services</a>
+        <a href="#bridal-collection" class="mobile-nav-link py-2 border-b border-gold/15 hover:text-maroon">Bridal Collection</a>
+        <a href="#gallery" class="mobile-nav-link py-2 border-b border-gold/15 hover:text-maroon">Gallery</a>
+        <a href="#testimonials" class="mobile-nav-link py-2 border-b border-gold/15 hover:text-maroon">Testimonials</a>
+        <a href="#contact" class="mobile-nav-link py-2 border-b border-gold/15 hover:text-maroon">Contact</a>
+        <a href="#appointment" class="mobile-nav-link mt-3 w-full text-center py-3 rounded-full bg-maroon text-ivory text-sm uppercase tracking-widest font-semibold">
+          Book Your Appointment
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. HERO SECTION
+       ========================================================================= -->
+  <section id="home" class="relative bg-heritage-pattern pt-10 pb-20 lg:py-24 overflow-hidden">
+    <!-- Decorative Soft Glows -->
+    <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-rose/30 blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-gold/15 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        
+        <!-- Left Column: Editorial Headline, Description & Buttons -->
+        <div class="lg:col-span-6 text-center lg:text-left reveal active">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-roseSoft/80 border border-gold/40 text-maroon text-xs font-semibold uppercase tracking-[0.2em] mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-maroon"></span>
+            <span>Authentic South Indian Bridal Artistry</span>
+          </div>
+
+          <h1 class="font-editorial text-4xl sm:text-5xl lg:text-6xl font-bold text-maroon leading-[1.12] tracking-tight mb-6">
+            Celebrate Your Beauty, Embrace Your Tradition
+          </h1>
+
+          <p class="text-base sm:text-lg text-espressoLight leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8">
+            Experience the perfect blend of traditional South Indian beauty and modern elegance. Let us make every special moment unforgettable.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <a href="#appointment" class="w-full sm:w-auto px-8 py-4 rounded-full bg-maroon text-ivory text-sm font-semibold uppercase tracking-wider hover:bg-maroonDark transition-all shadow-luxury text-center">
+              Book Your Appointment
+            </a>
+            <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-full bg-transparent border-2 border-gold text-espresso text-sm font-semibold uppercase tracking-wider hover:bg-gold hover:text-ivory transition-all text-center">
+              Explore Our Services
+            </a>
+          </div>
+
+          <!-- Heritage Trust Badges -->
+          <div class="grid grid-cols-3 gap-4 pt-10 mt-10 border-t border-gold/30 max-w-lg mx-auto lg:mx-0">
+            <div>
+              <p class="font-editorial text-3xl font-bold text-maroon">14+</p>
+              <p class="text-xs text-espressoLight uppercase tracking-wider mt-0.5">Years of Heritage</p>
+            </div>
+            <div>
+              <p class="font-editorial text-3xl font-bold text-maroon">2,800+</p>
+              <p class="text-xs text-espressoLight uppercase tracking-wider mt-0.5">Brides Adorned</p>
+            </div>
+            <div>
+              <p class="font-editorial text-3xl font-bold text-maroon">100%</p>
+              <p class="text-xs text-espressoLight uppercase tracking-wider mt-0.5">Pure Silk & Gold Care</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Framed High-Resolution South Indian Bride Photograph -->
+        <div class="lg:col-span-6 flex justify-center reveal active">
+          <div class="relative w-full max-w-md sm:max-w-lg">
+            <!-- Ornate Top Crown Accent -->
+            <div class="flex justify-center mb-3">
+              <svg class="w-16 h-6 text-gold" viewBox="0 0 80 24" fill="none">
+                <path d="M40 2L45 12L58 8L50 20H30L22 8L35 12L40 2Z" stroke="currentColor" stroke-width="1.5" fill="rgba(201,164,92,0.18)"/>
+              </svg>
+            </div>
+
+            <div class="bridal-arch-frame bg-ivoryDark p-3 shadow-luxury">
+              <div class="overflow-hidden rounded-t-[210px] rounded-b-[20px] aspect-[4/5]">
+                <img
+                  src="https://images.pexels.com/photos/12006824/pexels-photo-12006824.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  alt="South Indian Tamil bride wearing traditional Kanchipuram silk saree, layered gold temple jewellery, jasmine flowers, and bridal makeup"
+                  class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+            </div>
+
+            <!-- Floating Luxury Editorial Badge -->
+            <div class="hidden sm:flex items-center gap-3.5 bg-ivory/95 backdrop-blur-md border border-gold/50 rounded-2xl p-4 shadow-luxury absolute -bottom-6 -left-6 max-w-xs">
+              <div class="w-12 h-12 rounded-xl bg-maroon text-gold flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.3l-4.8 2.6.9-5.4-3.9-3.8 5.4-.8L12 3z" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-editorial text-lg font-bold text-maroon leading-tight">Royal Bridal Couture</p>
+                <p class="text-xs text-espressoLight mt-0.5">Kanchipuram Silk & Temple Jewellery Styling</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. ABOUT US SECTION
+       ========================================================================= -->
+  <section id="about" class="py-20 lg:py-28 bg-ivory">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left Column: Studio Portrait with Gold Frame -->
+        <div class="lg:col-span-6 reveal">
+          <div class="relative">
+            <div class="absolute -inset-3 rounded-3xl border border-gold/50 translate-x-3 translate-y-3 pointer-events-none"></div>
+            <div class="relative rounded-3xl overflow-hidden shadow-luxury aspect-[4/4.6]">
+              <img
+                src="https://images.pexels.com/photos/30458515/pexels-photo-30458515.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="South Indian Tamil bride in traditional Kanchipuram silk saree and temple gold jewellery"
+                class="w-full h-full object-cover object-top"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-maroon/50 via-transparent to-transparent"></div>
+              <div class="absolute bottom-6 left-6 right-6 text-ivory">
+                <p class="text-xs uppercase tracking-[0.25em] text-goldLight font-semibold">Est. 2012 • Chennai</p>
+                <p class="font-editorial text-2xl font-semibold mt-1">Timeless Grace & Sacred Rituals</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Narrative & Highlights -->
+        <div class="lg:col-span-6 reveal">
+          <span class="text-xs font-semibold uppercase tracking-[0.25em] text-gold block mb-3">Our Heritage & Philosophy</span>
+          <h2 class="font-editorial text-4xl sm:text-5xl font-bold text-maroon leading-tight mb-6">
+            Beauty Inspired by Tradition
+          </h2>
+
+          <p class="text-base text-espresso leading-relaxed mb-5">
+            At Kaveri Bridal & Beauty Studio, we believe that true radiance stems from honoring timeless South Indian heritage. Founded with a passion for classical bridal artistry, our sanctuary blends age-old botanical beauty rituals with refined contemporary makeup techniques.
+          </p>
+          <p class="text-base text-espressoLight leading-relaxed mb-8">
+            From intricate Kanchipuram silk saree pleating and traditional braided hairstyles adorned with fragrant jasmine blossoms to luminous, skin-first bridal makeup that enhances your natural complexion, every detail is tailored with warmth, precision, and devotion.
+          </p>
+
+          <!-- Studio Highlights Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-9">
+            <div class="p-4 rounded-2xl bg-ivoryDark border border-gold/30 flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-maroon/10 text-maroon flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-editorial text-xl font-bold text-maroon">Authentic Silk Draping</h3>
+                <p class="text-xs text-espressoLight mt-1">Crisp, crease-free Kanchipuram pleats sculpted to perfection.</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-ivoryDark border border-gold/30 flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-maroon/10 text-maroon flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-editorial text-xl font-bold text-maroon">Botanical Skin Rituals</h3>
+                <p class="text-xs text-espressoLight mt-1">Turmeric, sandalwood, and saffron therapies for bridal glow.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="#bridal-collection" class="inline-flex items-center gap-2.5 text-maroon font-semibold text-sm uppercase tracking-wider group">
+            <span class="border-b-2 border-gold pb-1 group-hover:border-maroon transition-colors">Discover Our Bridal Lookbook</span>
+            <svg class="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. OUR SERVICES (10 IMAGE-BASED LUXURY CARDS)
+       ========================================================================= -->
+  <section id="services" class="py-20 lg:py-28 bg-ivoryDark/70 border-y border-gold/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Heading -->
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+        <span class="text-xs font-semibold uppercase tracking-[0.25em] text-gold block mb-2">Curated Beauty & Bridal Menu</span>
+        <h2 class="font-editorial text-4xl sm:text-5xl font-bold text-maroon mb-4">Our Signature Services</h2>
+        <div class="gold-divider mb-4">
+          <span class="w-2 h-2 rotate-45 bg-gold"></span>
+        </div>
+        <p class="text-sm sm:text-base text-espressoLight">
+          Bespoke beauty rituals and ceremonial styling crafted exclusively for South Indian brides and celebrations.
+        </p>
+      </div>
+
+      <!-- Services Grid (Populated cleanly with 10 distinct services) -->
+      <div id="servicesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
+        <!-- Service cards are rendered via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. BRIDAL COLLECTION (6 FULL-WIDTH EDITORIAL SHOWCASE LOOKS)
+       ========================================================================= -->
+  <section id="bridal-collection" class="py-20 lg:py-28 bg-ivory">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Heading -->
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+        <span class="text-xs font-semibold uppercase tracking-[0.25em] text-gold block mb-2">Editorial Bridal Lookbook</span>
+        <h2 class="font-editorial text-4xl sm:text-5xl font-bold text-maroon mb-4">The Royal Bridal Collection</h2>
+        <div class="gold-divider mb-4">
+          <span class="w-2 h-2 rotate-45 bg-gold"></span>
+        </div>
+        <p class="text-sm sm:text-base text-espressoLight">
+          Six signature South Indian bridal transformations celebrating silk heritage, temple gold craftsmanship, and luminous elegance.
+        </p>
+      </div>
+
+      <!-- 6 Signature Looks Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Look 1 -->
+        <article class="group bg-ivoryDark rounded-3xl overflow-hidden border border-gold/30 shadow-sm hover:shadow-luxury transition-all duration-500 reveal">
+          <div class="img-zoom-container aspect-[4/5] relative">
+            <img
+              src="https://images.pexels.com/photos/12006824/pexels-photo-12006824.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Classic Tamil Bride in Red Kanchipuram Saree"
+              class="w-full h-full object-cover object-top"
+            />
+            <span class="absolute top-4 left-4 px-3.5 py-1 rounded-full bg-maroon/90 text-ivory text-xs font-medium tracking-wider">Look 01</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-editorial text-2xl font-bold text-maroon mb-2">Classic Tamil Bride – Red Kanchipuram Saree</h3>
+            <p class="text-sm text-espressoLight leading-relaxed mb-4">
+              A timeless ceremonial ensemble featuring handwoven crimson Kanchipuram silk, expressive kohl-rimmed eyes, and layered jasmine garlands.
+            </p>
+            <button onclick="selectServiceAndScroll('Traditional Bridal Makeup')" class="text-xs font-bold uppercase tracking-widest text-maroon hover:text-gold transition-colors inline-flex items-center gap-1.5">
+              <span>Reserve This Look</span>
+              <span>&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Look 2 -->
+        <article class="group bg-ivoryDark rounded-3xl overflow-hidden border border-gold/30 shadow-sm hover:shadow-luxury transition-all duration-500 reveal">
+          <div class="img-zoom-container aspect-[4/5] relative">
+            <img
+              src="https://images.pexels.com/photos/19891849/pexels-photo-19891849.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Traditional Temple Jewellery Bridal Look"
+              class="w-full h-full object-cover object-top"
+            />
+            <span class="absolute top-4 left-4 px-3.5 py-1 rounded-full bg-maroon/90 text-ivory text-xs font-medium tracking-wider">Look 02</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-editorial text-2xl font-bold text-maroon mb-2">Traditional Temple Jewellery Bridal Look</h3>
+            <p class="text-sm text-espressoLight leading-relaxed mb-4">
+              Adorned with antique gold coin necklaces, heirloom waist belts, sun-and-moon hair ornaments, and luminous golden-hour bridal skin.
+            </p>
+            <button onclick="selectServiceAndScroll('Traditional Bridal Makeup')" class="text-xs font-bold uppercase tracking-widest text-maroon hover:text-gold transition-colors inline-flex items-center gap-1.5">
+              <span>Reserve This Look</span>
+              <span>&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Look 3 -->
+        <article class="group bg-ivoryDark rounded-3xl overflow-hidden border border-gold/30 shadow-sm hover:shadow-luxury transition-all duration-500 reveal">
+          <div class="img-zoom-container aspect-[4/5] relative">
+            <img
+              src="https://images.pexels.com/photos/30458510/pexels-photo-30458510.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Elegant South Indian Wedding Makeup"
+              class="w-full h-full object-cover object-top"
+            />
+            <span class="absolute top-4 left-4 px-3.5 py-1 rounded-full bg-maroon/90 text-ivory text-xs font-medium tracking-wider">Look 03</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-editorial text-2xl font-bold text-maroon mb-2">Elegant South Indian Wedding Makeup</h3>
+            <p class="text-sm text-espressoLight leading-relaxed mb-4">
+              Flawless, sweat-resistant HD bridal complexion paired with warm bronze lids, traditional kumkum accents, and regal braided floral styling.
+            </p>
+            <button onclick="selectServiceAndScroll('Traditional Bridal Makeup')" class="text-xs font-bold uppercase tracking-widest text-maroon hover:text-gold transition-colors inline-flex items-center gap-1.5">
+              <span>Reserve This Look</span>
+              <span>&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Look 4 -->
+        <article class="group bg-ivoryDark rounded-3xl overflow-hidden border border-gold/30 shadow-sm hover:shadow-luxury transition-all duration-500 reveal">
+          <div class="img-zoom-container aspect-[4/5] relative">
+            <img
+              src="https://images.pexels.com/photos/33608796/pexels-photo-33608796.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Modern Tamil Bridal Look"
+              class="w-full h-full object-cover object-top"
+            />
+            <span class="absolute top-4 left-4 px-3.5 py-1 rounded-full bg-maroon/90 text-ivory text-xs font-medium tracking-wider">Look 04</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-editorial text-2xl font-bold text-maroon mb-2">Modern Tamil Bridal Look</h3>
+            <p class="text-sm text-espressoLight leading-relaxed mb-4">
+              Pastel tissue Kanchipuram silks paired with dewy glass-skin finish, soft rose-gold shimmer, and contemporary floral bun artistry.
+            </p>
+            <button onclick="selectServiceAndScroll('Engagement Makeup')" class="text-xs font-bold uppercase tracking-widest text-maroon hover:text-gold transition-colors inline-flex items-center gap-1.5">
+              <span>Reserve This Look</span>
+              <span>&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Look 5 -->
+        <article class="group bg-ivoryDark rounded-3xl overflow-hidden border border-gold/30 shadow-sm hover:shadow-luxury transition-all duration-500 reveal">
+          <div class="img-zoom-container aspect-[4/5] relative">
+            <img
+              src="https://images.pexels.com/photos/30572412/pexels-photo-30572412.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Traditional Reception Makeup"
+              class="w-full h-full object-cover object-top"
+            />
+            <span class="absolute top-4 left-4 px-3.5 py-1 rounded-full bg-maroon/90 text-ivory text-xs font-medium tracking-wider">Look 05</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-editorial text-2xl font-bold text-maroon mb-2">Traditional Reception Makeup</h3>
+            <p class="text-sm text-espressoLight leading-relaxed mb-4">
+              Glamorous evening radiance featuring sculpted cheekbones, velvet berry lips, statement emerald-and-gold chokers, and soft waves.
+            </p>
+            <button onclick="selectServiceAndScroll('Reception Makeup')" class="text-xs font-bold uppercase tracking-widest text-maroon hover:text-gold transition-colors inline-flex items-center gap-1.5">
+              <span>Reserve This Look</span>
+              <span>&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Look 6 -->
+        <article class="group bg-ivoryDark rounded-3xl overflow-hidden border border-gold/30 shadow-sm hover:shadow-luxury transition-all duration-500 reveal">
+          <div class="img-zoom-container aspect-[4/5] relative">
+            <img
+              src="https://images.pexels.com/photos/30458543/pexels-photo-30458543.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Simple Natural Bridal Look"
+              class="w-full h-full object-cover object-top"
+            />
+            <span class="absolute top-4 left-4 px-3.5 py-1 rounded-full bg-maroon/90 text-ivory text-xs font-medium tracking-wider">Look 06</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-editorial text-2xl font-bold text-maroon mb-2">Simple Natural Bridal Look</h3>
+            <p class="text-sm text-espressoLight leading-relaxed mb-4">
+              Effortless, breathable elegance designed for intimate temple weddings and pre-wedding ceremonies with fresh jasmine strands.
+            </p>
+            <button onclick="selectServiceAndScroll('Engagement Makeup')" class="text-xs font-bold uppercase tracking-widest text-maroon hover:text-gold transition-colors inline-flex items-center gap-1.5">
+              <span>Reserve This Look</span>
+              <span>&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. WHY CHOOSE US (6 FEATURE CARDS WITH ANTIQUE GOLD SVG ICONS)
+       ========================================================================= -->
+  <section class="py-20 lg:py-24 bg-maroon text-ivory relative overflow-hidden">
+    <!-- Subtle Gold Pattern Accent -->
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#C9A45C_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+        <span class="text-xs font-semibold uppercase tracking-[0.25em] text-goldLight block mb-2">The Kaveri Standard</span>
+        <h2 class="font-editorial text-4xl sm:text-5xl font-bold text-ivory mb-4">Why Brides Trust Us</h2>
+        <p class="text-sm sm:text-base text-roseSoft/90">
+          Every detail of your studio journey is designed to deliver calm, luxury, and unforgettable bridal perfection.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+        <!-- Feature 1 -->
+        <div class="p-7 rounded-3xl bg-maroonDark/70 border border-gold/30 hover:border-gold transition-all reveal">
+          <div class="w-12 h-12 rounded-2xl bg-gold/15 border border-gold/40 flex items-center justify-center text-gold mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+            </svg>
+          </div>
+          <h3 class="font-editorial text-2xl font-bold text-goldLight mb-2">Experienced Makeup Artists</h3>
+          <p class="text-sm text-ivory/80 leading-relaxed">
+            Senior bridal specialists trained in color theory for South Indian skin tones and long-wear ceremonial lighting.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="p-7 rounded-3xl bg-maroonDark/70 border border-gold/30 hover:border-gold transition-all reveal">
+          <div class="w-12 h-12 rounded-2xl bg-gold/15 border border-gold/40 flex items-center justify-center text-gold mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3L2 9l10 6 10-6-10-6zM2 17l10 6 10-6M2 13l10 6 10-6" />
+            </svg>
+          </div>
+          <h3 class="font-editorial text-2xl font-bold text-goldLight mb-2">Traditional Bridal Expertise</h3>
+          <p class="text-sm text-ivory/80 leading-relaxed">
+            Deep mastery of classical Kanchipuram saree pleating, temple jewellery placement, and authentic jasmine floral braids.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="p-7 rounded-3xl bg-maroonDark/70 border border-gold/30 hover:border-gold transition-all reveal">
+          <div class="w-12 h-12 rounded-2xl bg-gold/15 border border-gold/40 flex items-center justify-center text-gold mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18zm0-13v4l3 3" />
+            </svg>
+          </div>
+          <h3 class="font-editorial text-2xl font-bold text-goldLight mb-2">Premium Beauty Products</h3>
+          <p class="text-sm text-ivory/80 leading-relaxed">
+            Curated international luxury cosmetics alongside pure, skin-safe Ayurvedic herbal formulations.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="p-7 rounded-3xl bg-maroonDark/70 border border-gold/30 hover:border-gold transition-all reveal">
+          <div class="w-12 h-12 rounded-2xl bg-gold/15 border border-gold/40 flex items-center justify-center text-gold mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+            </svg>
+          </div>
+          <h3 class="font-editorial text-2xl font-bold text-goldLight mb-2">Personalized Beauty Care</h3>
+          <p class="text-sm text-ivory/80 leading-relaxed">
+            One-on-one pre-bridal skin consultations and bespoke trial sessions tailored to your attire and wedding rituals.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="p-7 rounded-3xl bg-maroonDark/70 border border-gold/30 hover:border-gold transition-all reveal">
+          <div class="w-12 h-12 rounded-2xl bg-gold/15 border border-gold/40 flex items-center justify-center text-gold mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="font-editorial text-2xl font-bold text-goldLight mb-2">Professional Service</h3>
+          <p class="text-sm text-ivory/80 leading-relaxed">
+            Punctual venue and studio arrivals, calm bridal suite hospitality, and hygienic single-use applicators.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="p-7 rounded-3xl bg-maroonDark/70 border border-gold/30 hover:border-gold transition-all reveal">
+          <div class="w-12 h-12 rounded-2xl bg-gold/15 border border-gold/40 flex items-center justify-center text-gold mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33" />
+            </svg>
+          </div>
+          <h3 class="font-editorial text-2xl font-bold text-goldLight mb-2">Affordable Packages</h3>
+          <p class="text-sm text-ivory/80 leading-relaxed">
+            Transparent, thoughtfully bundled bridal, engagement, and family celebration packages with zero hidden fees.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. FILTERABLE MASONRY IMAGE GALLERY + FULLSCREEN LIGHTBOX
+       ========================================================================= -->
+  <section id="gallery" class="py-20 lg:py-28 bg-ivory">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Heading -->
+      <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+        <span class="text-xs font-semibold uppercase tracking-[0.25em] text-gold block mb-2">Portfolio of Radiance</span>
+        <h2 class="font-editorial text-4xl sm:text-5xl font-bold text-maroon mb-4">Bridal & Heritage Gallery</h2>
+        <div class="gold-divider mb-4">
+          <span class="w-2 h-2 rotate-45 bg-gold"></span>
+        </div>
+        <p class="text-sm sm:text-base text-espressoLight">
+          Explore authentic portraits of Kanchipuram silk drapes, jasmine floral hair art, temple gold jewellery, and intricate bridal mehndi.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-12 reveal" id="galleryFilters">
+        <button data-filter="all" class="gallery-filter-btn active px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-maroon text-ivory border border-maroon transition-all">
+          All
+        </button>
+        <button data-filter="bridal" class="gallery-filter-btn px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-ivoryDark text-espresso border border-gold/40 hover:border-maroon transition-all">
+          Bridal Portraits
+        </button>
+        <button data-filter="silk" class="gallery-filter-btn px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-ivoryDark text-espresso border border-gold/40 hover:border-maroon transition-all">
+          Silk Sarees
+        </button>
+        <button data-filter="floral" class="gallery-filter-btn px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-ivoryDark text-espresso border border-gold/40 hover:border-maroon transition-all">
+          Floral & Hair
+        </button>
+        <button data-filter="jewellery" class="gallery-filter-btn px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-ivoryDark text-espresso border border-gold/40 hover:border-maroon transition-all">
+          Temple Jewellery
+        </button>
+        <button data-filter="mehndi" class="gallery-filter-btn px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-ivoryDark text-espresso border border-gold/40 hover:border-maroon transition-all">
+          Mehndi
+        </button>
+      </div>
+
+      <!-- Masonry Grid -->
+      <div id="masonryGallery" class="masonry-grid">
+        <!-- Gallery items injected via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       8. TESTIMONIALS CAROUSEL / SLIDER
+       ========================================================================= -->
+  <section id="testimonials" class="py-20 lg:py-28 bg-ivoryDark/80 border-y border-gold/25">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+        <span class="text-xs font-semibold uppercase tracking-[0.25em] text-gold block mb-2">Words From Our Brides</span>
+        <h2 class="font-editorial text-4xl sm:text-5xl font-bold text-maroon mb-4">Cherished Client Stories</h2>
+        <div class="gold-divider">
+          <span class="w-2 h-2 rotate-45 bg-gold"></span>
+        </div>
+      </div>
+
+      <!-- Testimonial Slider Card -->
+      <div class="relative bg-ivory rounded-3xl border border-gold/40 shadow-luxury p-8 sm:p-12 reveal">
+        <!-- Decorative Quote Mark -->
+        <div class="text-gold/30 font-editorial text-8xl leading-none select-none absolute top-4 left-7">&ldquo;</div>
+
+        <div id="testimonialContent" class="relative z-10 text-center transition-opacity duration-300">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="flex items-center justify-between mt-8 pt-6 border-t border-gold/25">
+          <button id="prevTestimonial" aria-label="Previous Testimonial" class="w-11 h-11 rounded-full border border-gold/50 text-maroon hover:bg-maroon hover:text-ivory flex items-center justify-center transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <!-- Pagination Dots -->
+          <div id="testimonialDots" class="flex items-center gap-2.5"></div>
+
+          <button id="nextTestimonial" aria-label="Next Testimonial" class="w-11 h-11 rounded-full border border-gold/50 text-maroon hover:bg-maroon hover:text-ivory flex items-center justify-center transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       9. APPOINTMENT BOOKING FORM + WHATSAPP DIRECT INTEGRATION
+       ========================================================================= -->
+  <section id="appointment" class="py-20 lg:py-28 bg-heritage-pattern">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch bg-ivory rounded-3xl border border-gold/40 shadow-luxury overflow-hidden reveal">
+        
+        <!-- Left Info Panel -->
+        <div class="lg:col-span-5 bg-maroon text-ivory p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden">
+          <div class="relative z-10">
+            <span class="text-xs font-semibold uppercase tracking-[0.25em] text-goldLight block mb-3">Reserve Your Session</span>
+            <h2 class="font-editorial text-3xl sm:text-4xl font-bold leading-tight mb-4">
+              Begin Your Bridal & Beauty Journey
+            </h2>
+            <p class="text-sm text-roseSoft/90 leading-relaxed mb-8">
+              Schedule a private bridal consultation, pre-wedding glow ritual, or salon appointment. You can also send your booking details directly via WhatsApp for instant confirmation.
+            </p>
+
+            <div class="space-y-4 text-sm">
+              <div class="flex items-start gap-3">
+                <span class="w-8 h-8 rounded-full bg-gold/20 text-gold flex items-center justify-center shrink-0 mt-0.5">1</span>
+                <p class="text-ivory/90">Choose your preferred bridal package or beauty service.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="w-8 h-8 rounded-full bg-gold/20 text-gold flex items-center justify-center shrink-0 mt-0.5">2</span>
+                <p class="text-ivory/90">Select your auspicious wedding or salon date and time slot.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="w-8 h-8 rounded-full bg-gold/20 text-gold flex items-center justify-center shrink-0 mt-0.5">3</span>
+                <p class="text-ivory/90">Confirm online or connect immediately with our bridal concierge on WhatsApp.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative z-10 mt-10 pt-6 border-t border-gold/30">
+            <p class="text-xs uppercase tracking-widest text-goldLight">Bridal Concierge Desk</p>
+            <p class="font-editorial text-2xl font-bold mt-1">+91 98401 72650</p>
+          </div>
+        </div>
+
+        <!-- Right Form Panel -->
+        <div class="lg:col-span-7 p-8 sm:p-10">
+          <form id="bookingForm" class="space-y-5" novalidate>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <!-- Full Name -->
+              <div>
+                <label for="fullName" class="block text-xs font-semibold uppercase tracking-wider text-espresso mb-2">Full Name *</label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  required
+                  placeholder="Enter your full name"
+                  class="w-full px-4 py-3 rounded-xl bg-ivoryDark/70 border border-gold/40 text-espresso text-sm focus:outline-none focus:border-maroon focus:ring-1 focus:ring-maroon"
+                />
+              </div>
+
+              <!-- Mobile Number -->
+              <div>
+                <label for="mobileNumber" class="block text-xs font-semibold uppercase tracking-wider text-espresso mb-2">Mobile Number *</label>
+                <input
+                  type="tel"
+                  id="mobileNumber"
+                  name="mobileNumber"
+                  required
+                  placeholder="+91 98XXX XXXXX"
+                  class="w-full px-4 py-3 rounded-xl bg-ivoryDark/70 border border-gold/40 text-espresso text-sm focus:outline-none focus:border-maroon focus:ring-1 focus:ring-maroon"
+                />
+              </div>
+            </div>
+
+            <!-- Select Service -->
+            <div>
+              <label for="serviceSelect" class="block text-xs font-semibold uppercase tracking-wider text-espresso mb-2">Select Service *</label>
+              <select
+                id="serviceSelect"
+                name="serviceSelect"
+                required
+                class="w-full px-4 py-3 rounded-xl bg-ivoryDark/70 border border-gold/40 text-espresso text-sm focus:outline-none focus:border-maroon focus:ring-1 focus:ring-maroon"
+              >
+                <option value="">-- Choose a Service or Bridal Package --</option>
+                <optgroup label="Bridal Packages">
+                  <option value="Royal Kanchipuram Bridal Package">Royal Kanchipuram Bridal Package (Full Wedding)</option>
+                  <option value="Complete Wedding & Reception Package">Complete Wedding & Reception Bridal Package</option>
+                </optgroup>
+                <optgroup label="Individual Services">
+                  <option value="Traditional Bridal Makeup">Traditional Bridal Makeup</option>
+                  <option value="Engagement Makeup">Engagement Makeup</option>
+                  <option value="Reception Makeup">Reception Makeup</option>
+                  <option value="Facial & Skin Care">Facial & Skin Care</option>
+                  <option value="Hair Styling">Hair Styling</option>
+                  <option value="Saree Draping">Saree Draping</option>
+                  <option value="Mehndi Design">Mehndi Design</option>
+                  <option value="Hair Spa">Hair Spa</option>
+                  <option value="Threading & Waxing">Threading & Waxing</option>
+                  <option value="Traditional Beauty Treatments">Traditional Beauty Treatments</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <!-- Appointment Date -->
+              <div>
+                <label for="appointmentDate" class="block text-xs font-semibold uppercase tracking-wider text-espresso mb-2">Appointment Date *</label>
+                <input
+                  type="date"
+                  id="appointmentDate"
+                  name="appointmentDate"
+                  required
+                  class="w-full px-4 py-3 rounded-xl bg-ivoryDark/70 border border-gold/40 text-espresso text-sm focus:outline-none focus:border-maroon focus:ring-1 focus:ring-maroon"
+                />
+              </div>
+
+              <!-- Preferred Time -->
+              <div>
+                <label for="preferredTime" class="block text-xs font-semibold uppercase tracking-wider text-espresso mb-2">Preferred Time *</label>
+                <select
+                  id="preferredTime"
+                  name="preferredTime"
+                  required
+                  class="w-full px-4 py-3 rounded-xl bg-ivoryDark/70 border border-gold/40 text-espresso text-sm focus:outline-none focus:border-maroon focus:ring-1 focus:ring-maroon"
+                >
+                  <option value="">-- Select Preferred Slot --</option>
+                  <option value="Early Morning (05:30 AM - 08:30 AM - Auspicious Bridal Slot)">Early Morning (05:30 AM - 08:30 AM)</option>
+                  <option value="Morning (09:30 AM - 12:30 PM)">Morning (09:30 AM - 12:30 PM)</option>
+                  <option value="Afternoon (01:00 PM - 04:00 PM)">Afternoon (01:00 PM - 04:00 PM)</option>
+                  <option value="Evening (04:30 PM - 07:30 PM)">Evening (04:30 PM - 07:30 PM)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label for="bookingMessage" class="block text-xs font-semibold uppercase tracking-wider text-espresso mb-2">Special Notes or Venue Details</label>
+              <textarea
+                id="bookingMessage"
+                name="bookingMessage"
+                rows="3"
+                placeholder="Share your wedding venue, saree color preferences, or skin care requests..."
+                class="w-full px-4 py-3 rounded-xl bg-ivoryDark/70 border border-gold/40 text-espresso text-sm focus:outline-none focus:border-maroon focus:ring-1 focus:ring-maroon"
+              ></textarea>
+            </div>
+
+            <!-- Inline Validation / Confirmation Message Box -->
+            <div id="bookingFeedback" class="hidden rounded-2xl p-4 text-sm"></div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-3.5 pt-2">
+              <button
+                type="submit"
+                class="flex-1 py-3.5 px-6 rounded-full bg-maroon text-ivory text-xs font-bold uppercase tracking-widest hover:bg-maroonDark transition-all shadow-md"
+              >
+                Confirm Appointment
+              </button>
+
+              <button
+                type="button"
+                id="whatsappBookBtn"
+                class="flex-1 py-3.5 px-6 rounded-full bg-[#1F7A4C] text-ivory text-xs font-bold uppercase tracking-widest hover:bg-[#17613C] transition-all shadow-md inline-flex items-center justify-center gap-2"
+              >
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+                </svg>
+                <span>Book via WhatsApp</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       10. CONTACT & FOOTER
+       ========================================================================= -->
+  <footer id="contact" class="bg-espresso text-ivory pt-20 pb-10 border-t-4 border-gold">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-14 border-b border-gold/20">
+        
+        <!-- Brand Column -->
+        <div class="lg:col-span-4">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-full bg-maroon border border-gold flex items-center justify-center text-gold">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 3C14.5 7 15.5 10.5 12 14.5C8.5 10.5 9.5 7 12 3Z" />
+                <path d="M12 14.5C15.5 11.5 19 11.5 21 14C18.5 16.5 15 17 12 14.5Z" />
+                <path d="M12 14.5C8.5 11.5 5 11.5 3 14C5.5 16.5 9 17 12 14.5Z" />
+              </svg>
+            </div>
+            <div>
+              <span class="block font-editorial text-2xl font-bold text-goldLight tracking-wide leading-none">KAVERI</span>
+              <span class="block text-[10px] uppercase tracking-[0.25em] text-ivory/70 mt-0.5">Bridal & Beauty Studio</span>
+            </div>
+          </div>
+          <p class="text-sm text-ivory/75 leading-relaxed mb-6">
+            A luxury sanctuary dedicated to traditional South Indian bridal artistry, Kanchipuram silk saree draping, temple jewellery styling, and holistic beauty care.
+          </p>
+
+          <!-- Social Icons -->
+          <div class="flex items-center gap-3">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-10 h-10 rounded-full bg-ivory/10 hover:bg-gold hover:text-espresso flex items-center justify-center transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-10 h-10 rounded-full bg-ivory/10 hover:bg-gold hover:text-espresso flex items-center justify-center transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              </svg>
+            </a>
+            <a href="https://wa.me/919840172650" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-10 h-10 rounded-full bg-ivory/10 hover:bg-[#1F7A4C] hover:text-ivory flex items-center justify-center transition-colors">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="lg:col-span-2">
+          <h3 class="font-editorial text-xl font-bold text-goldLight mb-4">Quick Links</h3>
+          <ul class="space-y-2.5 text-sm text-ivory/80">
+            <li><a href="#home" class="hover:text-goldLight transition-colors">Home</a></li>
+            <li><a href="#about" class="hover:text-goldLight transition-colors">About Studio</a></li>
+            <li><a href="#services" class="hover:text-goldLight transition-colors">Our Services</a></li>
+            <li><a href="#bridal-collection" class="hover:text-goldLight transition-colors">Bridal Collection</a></li>
+            <li><a href="#gallery" class="hover:text-goldLight transition-colors">Bridal Gallery</a></li>
+            <li><a href="#appointment" class="hover:text-goldLight transition-colors">Book Appointment</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Studio Hours -->
+        <div class="lg:col-span-3">
+          <h3 class="font-editorial text-xl font-bold text-goldLight mb-4">Visit Our Studio</h3>
+          <ul class="space-y-3 text-sm text-ivory/80">
+            <li class="flex items-start gap-2.5">
+              <span class="text-gold mt-1">&#9670;</span>
+              <span>No. 42, North Mada Street, Mylapore, Chennai, Tamil Nadu 600004</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span class="text-gold">&#9670;</span>
+              <span>+91 98401 72650 / 044-2461 8890</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span class="text-gold">&#9670;</span>
+              <span>bridal@kaveribeautystudio.in</span>
+            </li>
+            <li class="pt-2 border-t border-gold/20">
+              <p class="text-xs uppercase tracking-wider text-goldLight font-semibold">Business Hours</p>
+              <p class="mt-1">Mon – Sun: 09:00 AM – 08:30 PM</p>
+              <p class="text-xs text-ivory/60 mt-0.5">(Early dawn bridal bookings available upon request)</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Embedded Google Map -->
+        <div class="lg:col-span-3">
+          <h3 class="font-editorial text-xl font-bold text-goldLight mb-4">Location Map</h3>
+          <div class="rounded-2xl overflow-hidden border border-gold/30 h-48 bg-maroonDark">
+            <iframe
+              title="Kaveri Bridal & Beauty Studio Chennai Location"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=80.2640%2C13.0300%2C80.2760%2C13.0380&layer=mapnik&marker=13.0340%2C80.2700"
+              class="w-full h-full border-0 filter contrast-95"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-ivory/60 gap-4">
+        <p>&copy; 2026 Kaveri Bridal & Beauty Studio. All Rights Reserved.</p>
+        <p>Crafted with reverence for South Indian Bridal Heritage.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       FULLSCREEN LIGHTBOX MODAL FOR GALLERY
+       ========================================================================= -->
+  <div id="lightboxModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4">
+    <button id="closeLightbox" aria-label="Close Gallery" class="absolute top-5 right-5 w-11 h-11 rounded-full bg-ivory/15 hover:bg-maroon text-ivory flex items-center justify-center transition-colors">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <button id="prevLightbox" aria-label="Previous Image" class="absolute left-4 sm:left-8 w-11 h-11 rounded-full bg-ivory/15 hover:bg-maroon text-ivory flex items-center justify-center transition-colors">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+
+    <div class="max-w-4xl w-full flex flex-col items-center">
+      <img id="lightboxImage" src="" alt="" class="max-h-[76vh] w-auto rounded-2xl border-2 border-gold/50 shadow-2xl object-contain" />
+      <div class="mt-4 text-center">
+        <span id="lightboxCategory" class="text-xs uppercase tracking-[0.2em] text-goldLight font-semibold"></span>
+        <h4 id="lightboxTitle" class="font-editorial text-2xl text-ivory font-semibold mt-1"></h4>
+      </div>
+    </div>
+
+    <button id="nextLightbox" aria-label="Next Image" class="absolute right-4 sm:right-8 w-11 h-11 rounded-full bg-ivory/15 hover:bg-maroon text-ivory flex items-center justify-center transition-colors">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- External JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

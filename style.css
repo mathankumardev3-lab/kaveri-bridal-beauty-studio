@@ -1,0 +1,135 @@
+/* =========================================================================
+   KAVERI BRIDAL & BEAUTY STUDIO - CUSTOM STYLESHEET (style.css)
+   ========================================================================= */
+
+:root {
+  --bg-ivory: #FFF9F0;
+  --color-maroon: #800020;
+  --color-maroon-dark: #5C0017;
+  --color-gold: #C9A45C;
+  --color-rose: #E8B7B7;
+  --color-text: #382820;
+}
+
+body {
+  background-color: var(--bg-ivory);
+  color: var(--color-text);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-editorial {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* Subtle South Indian Temple Kolam / Mandala Pattern Overlay */
+.bg-heritage-pattern {
+  background-image: radial-gradient(rgba(201, 164, 92, 0.18) 1px, transparent 1px),
+                    radial-gradient(rgba(128, 0, 32, 0.06) 1px, var(--bg-ivory) 1px);
+  background-size: 36px 36px;
+  background-position: 0 0, 18px 18px;
+}
+
+/* Ornamental Gold Divider */
+.gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.gold-divider::before,
+.gold-divider::after {
+  content: '';
+  height: 1px;
+  width: 3.5rem;
+  background: linear-gradient(90deg, transparent, #C9A45C, transparent);
+}
+
+/* Hero Arch Frame */
+.bridal-arch-frame {
+  border-radius: 220px 220px 24px 24px;
+  position: relative;
+}
+
+.bridal-arch-frame::after {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border: 1.5px solid #C9A45C;
+  border-radius: 230px 230px 30px 30px;
+  pointer-events: none;
+}
+
+/* Smooth Card Image Zoom */
+.img-zoom-container {
+  overflow: hidden;
+}
+
+.img-zoom-container img {
+  transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .img-zoom-container img,
+.img-zoom-container:hover img {
+  transform: scale(1.07);
+}
+
+/* Masonry Gallery Layout */
+.masonry-grid {
+  column-count: 1;
+  column-gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-grid {
+    column-count: 3;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
+
+/* Scroll Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF9F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C9A45C;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #800020;
+}
+
+/* Lightbox Transitions */
+#lightboxModal {
+  transition: opacity 0.3s ease;
+}
